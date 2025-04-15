@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Catraca Academia</title>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  <script src="script.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative min-h-screen bg-cover bg-center" style="background-image: url('../catraca local/static/img/fundo.webp'); background-size: cover; background-position: center;">
+
+  <!-- Camada escura com blur -->
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+  <!-- Conteúdo principal centralizado -->
+  <div class="relative z-10 flex items-center justify-center min-h-screen">
+    <div class="bg-gray/90 shadow-xl rounded-3xl p-6 w-[360px] relative border-2 border-yellow-400">
+
+      <!-- Título -->
+      <h1 class="text-center text-2xl font-bold text-yellow-500 mb-4">Entrada Academia</h1>
+
+      <!-- Visor estilo LED -->
+      <div id="visor" class="bg-gray-900 text-yellow-400 text-center font-mono text-lg rounded-xl py-4 border-4 border-yellow-500 mb-6">
+        Digite seu CPF
+      </div>
+
+      <!-- Grade de botões -->
+      <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+        <button onclick="adicionarDigito(1)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">1</button>
+        <button onclick="adicionarDigito(2)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">2</button>
+        <button onclick="adicionarDigito(3)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">3</button>
+        <button onclick="adicionarDigito(4)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">4</button>
+        <button onclick="adicionarDigito(5)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">5</button>
+        <button onclick="adicionarDigito(6)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">6</button>
+        <button onclick="adicionarDigito(7)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">7</button>
+        <button onclick="adicionarDigito(8)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">8</button>
+        <button onclick="adicionarDigito(9)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">9</button>
+      </div>
+
+      <!-- Linha final: Apagar, 0, OK -->
+      <div class="grid grid-cols-3 gap-4 mb-4 text-center">
+        <button onclick="apagarCPF()" class="bg-gray-400 hover:bg-gray-500 text-white rounded-full w-20 h-20 text-xl">
+          <i class="fas fa-delete-left"></i>
+        </button>
+        <button onclick="adicionarDigito(0)" class="text-xl font-bold text-gray-800 bg-gray-200 hover:bg-yellow-400 rounded-full w-20 h-20">0</button>
+        <button onclick="enviarCPF()" class="bg-yellow-500 hover:bg-yellow-600 text-white rounded-full w-20 h-20 text-xl">
+          <i class="fas fa-check">Enviar</i>
+        </button>
+      </div>
+
+      <!-- Círculo de status -->
+      <div class="absolute -right-10 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full border-4 transition-all" id="statusCirculo"></div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
