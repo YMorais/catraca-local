@@ -27,7 +27,7 @@ async function enviarCPF() {
     return;
   }
   try{
-      const dados = await fetch('https://backend-catraca.vercel.app/academia_consulta/'+cpf)
+      const dados = await fetch('https://backend-catraca.vercel.app/academia/aluno/'+cpf)
       console.log(dados)
       const aluno = await dados.json()
       console.log(aluno)
