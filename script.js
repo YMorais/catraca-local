@@ -30,10 +30,10 @@ async function enviarCPF() {
       const dados = await fetch('https://backend-catraca.vercel.app/academia/aluno/'+cpf)
       console.log(dados)
       const aluno = await dados.json()
-      console.log(aluno)
-      if (aluno.status == true){
+      console.log("Aluno:"+aluno)
+      if (aluno.status == "Ativo"){
         visor.textContent = `Olá ${aluno.nome}. Acesso liberado`
-      }else if(aluno.status==false){
+      }else if(aluno.status=="Inativo"){
         visor.textContent = "CPF não encontrado"
       }else{
         visor.textContent = `Acesso negado, ${aluno.nome}. Procure a secretaria`
@@ -43,12 +43,6 @@ async function enviarCPF() {
     console.log(error)
   }
 
-      
-
-  // // Simula resposta de consulta
-  // const status = cpf.endsWith("0") ? "bloqueado" : "liberado";
-  // visor.textContent = status === "liberado" ? "Acesso Liberado" : "Acesso Bloqueado";
-  // atualizarStatus(status);
 
   // Reseta após 3 segundos
   setTimeout(() => {
