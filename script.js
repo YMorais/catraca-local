@@ -34,9 +34,9 @@ async function enviarCPF() {
       if (aluno.status == "Ativo"){
         visor.textContent = `Olá ${aluno.nome}. Acesso liberado`
       }else if(aluno.status=="Inativo"){
-        visor.textContent = "CPF não encontrado"
-      }else{
         visor.textContent = `Acesso negado, ${aluno.nome}. Procure a secretaria`
+      }else{
+        visor.textContent = "CPF não encontrado"
       }
 
   }catch(error){
