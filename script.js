@@ -32,11 +32,11 @@ async function enviarCPF() {
       const aluno = await dados.json()
       console.log(aluno)
       if (aluno.status == true){
-        visor.textContent = `Olá ${aluno.nome}, Acesso liberado`
+        visor.textContent = `Olá ${aluno.nome}. Acesso liberado`
       }else if(aluno.status==false){
         visor.textContent = "CPF não encontrado"
       }else{
-        visor.textContent = "Acesso negado"
+        visor.textContent = `Acesso negado, ${aluno.nome}. Procure a secretaria`
       }
 
   }catch(error){
